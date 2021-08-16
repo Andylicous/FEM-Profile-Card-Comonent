@@ -51,73 +51,43 @@ body {
   font-size: 1.125rem;
   background-color: var(--DarkCyan);
   padding: 0 25px;
-  position: relative;
 }
 
-body::before {
-  position: fixed;
-  content: "";
-  background-image: url(/images/bg-pattern-top.svg);
-  width: 978px;
-  height: 978px;
-  top: -620px;
-  left: -750px;
-}
-
-body::after {
-  position: fixed;
-  content: "";
-  background-image: url(/images/bg-pattern-bottom.svg);
-  width: 978px;
-  height: 978px;
-  top: 165px;
-  left: 203px;
-  z-index: -1;
-}
-
-#card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  display: inline-block;
+.card {
+  border-radius: 8px;
 }
 
 .card__topBackground {
-  position: relative;
   height: 140px;
   background-image: url(/images/bg-pattern-card.svg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  border-radius: 25px 25px 0 0;
+  position: relative;
 }
 
 .card__topBackground::before {
-  position: absolute;
   content: "";
   background-image: url(/images/image-victor.jpg);
   border-radius: 50%;
   border: 5px solid white;
   width: 100px;
   height: 100px;
-  top: 92px;
-  left: 50%;
-  margin-left: -50px;
+  top: 0;
+  left: 162px;
+  position: absolute;
+  display: inline-block;
 }
 
 .card__content {
   background-color: #fff;
   text-align: center;
   height: 235px;
-  border-radius: 0 0 25px 25px;
 }
 .card__content p {
   font-weight: 700;
   padding-top: 75px;
+  margin-bottom: 15px;
 }
 
 .card__content .age {
@@ -133,15 +103,12 @@ body::after {
 .card__divider {
   margin: 28px 0;
   border-top: 1px solid #e8e8e8;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 0;
 }
 
 .stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 0 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .stat__number {
